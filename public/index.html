@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111412">
+  <meta name="description" content="VHS — memórias em vídeo da nossa família.">
+  <title>VHS · Memórias em vídeo</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script type="module" src="/js/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Ir para o conteúdo</a>
+  <header class="header">
+    <a class="brand" href="#" aria-label="VHS — início"><span class="logo">VHS<span class="logo-dot">●</span></span><span class="brand-sub">Memórias em vídeo</span></a>
+    <div class="header-actions"><span class="private-label"><span aria-hidden="true">◈</span> Acervo da família</span><button id="refresh" class="button subtle" type="button" aria-label="Atualizar catálogo">↻ <span>Atualizar</span></button><form method="post" action="/logout"><button class="button subtle" type="submit">Sair</button></form></div>
+  </header>
+  <main id="main" tabindex="-1">
+    <section id="intro" class="intro">
+      <div><p class="eyebrow"><span class="live-dot"></span> NOSSA COLEÇÃO PARTICULAR</p><h1>Tem coisas que merecem<br>ser vistas <em>outra vez.</em></h1><p class="intro-copy">As viagens, os encontros e os pequenos momentos.<br>Um lugar para guardar o que a gente viveu.</p></div>
+      <div class="tape" aria-hidden="true"><div class="tape-top"><span>VHS / FAMÍLIA</span><span>● REC</span></div><div class="tape-window"><i></i><span>MEMÓRIAS<br>PARA SEMPRE</span><i></i></div><div class="tape-bottom">NOSSA HISTÓRIA, EM PLAY. <span>∞</span></div></div>
+    </section>
+    <nav id="breadcrumb" class="breadcrumb" aria-label="Navegação" hidden></nav>
+    <section aria-labelledby="section-title">
+      <div class="section-heading"><div><p id="section-label" class="eyebrow">BONS MOMENTOS, JUNTOS</p><h2 id="section-title">Nossos álbuns</h2></div><span id="count" class="count"></span></div>
+      <p id="status" class="status" role="status" aria-live="polite">Abrindo o acervo…</p>
+      <div id="grid" class="grid" aria-label="Acervo"></div>
+      <section id="player-panel" hidden aria-label="Reprodução de vídeo"><video id="player" controls playsinline preload="none"></video><p id="player-error" class="error" role="alert" hidden></p><div class="player-caption"><span id="player-title"></span><span id="player-date" class="muted"></span></div></section>
+    </section>
+    <noscript><p class="status">Ative o JavaScript para consultar os álbuns e assistir aos vídeos.</p></noscript>
+  </main>
+  <footer><a class="footer-brand" href="#">VHS<span> / </span>FAMÍLIA</a><span>Feito de momentos. Guardado com carinho.</span><span class="footer-note">SÓ ENTRE NÓS ◈</span></footer>
+</body>
+</html>
