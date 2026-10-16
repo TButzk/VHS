@@ -1,4 +1,4 @@
 # Somente referência. Execute npm run setup:local para gerar valores aleatórios.
 # Configure os valores reais como Secrets no Cloudflare Pages, nunca neste arquivo.
-# SITE_PASSWORD="senha compartilhada com ao menos 12 caracteres"
+# SITE_PASSWORD="senha compartilhada com ao menos 8 caracteres"
 # SESSION_SECRET="chave aleatória independente com ao menos 32 caracteres"

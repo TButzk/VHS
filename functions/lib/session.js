@@ -2,7 +2,7 @@ const encoder = new TextEncoder();
 export const SESSION_SECONDS = 24 * 60 * 60;
 
 export function authConfigured(env) {
-  return typeof env.SITE_PASSWORD === 'string' && env.SITE_PASSWORD.length >= 12 &&
+  return typeof env.SITE_PASSWORD === 'string' && env.SITE_PASSWORD.length >= 8 &&
     env.SITE_PASSWORD.length <= 256 && typeof env.SESSION_SECRET === 'string' && env.SESSION_SECRET.length >= 32;
 }
 

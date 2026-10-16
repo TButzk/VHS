@@ -28,6 +28,17 @@ test('password verification accepts exact input only', async () => {
   for (const value of ['', 'incorrect', env.SITE_PASSWORD.toUpperCase(), env.SITE_PASSWORD + ' ', 'x'.repeat(257)]) assert.equal(await passwordMatches(value, env), false);
 });
 
+test('eight-character passwords support login and signed sessions', async () => {
+  const bindings = { ...env, SITE_PASSWORD: '12345678' };
+  assert.equal(authConfigured(bindings), true);
+  assert.equal(authConfigured({ ...bindings, SITE_PASSWORD: '1234567' }), false);
+  assert.equal(await passwordMatches('12345678', bindings), true);
+  assert.equal(await passwordMatches('12345679', bindings), false);
+  const token = await createSession(bindings, 'vhs.tiarlesbutzk.com.br');
+  assert.equal(await verifySession(token, bindings, 'vhs.tiarlesbutzk.com.br'), true);
+  assert.equal(authConfigured({ ...bindings, SESSION_SECRET: 'x'.repeat(31) }), false);
+});
+
 test('signed sessions expire, bind to host and reject tampering', async () => {
   const now = 1800000000000;
   const token = await createSession(env, 'vhs.tiarlesbutzk.com.br', now);

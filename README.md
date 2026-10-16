@@ -37,7 +37,7 @@ Se a pasta pessoal for somente leitura, instale com `npm ci --cache /tmp/vhs-npm
 
 Toda rota passa por `functions/_middleware.js`, incluindo HTML, JavaScript, catálogo, capas e vídeos. Sem sessão, as páginas redirecionam para `/login`; `/api/*` e `/media/*` retornam `401`. Apenas a tela de login, seu CSS e o favicon podem ser acessados sem login. A proteção está no servidor, não no JavaScript do navegador.
 
-- `SITE_PASSWORD`: senha compartilhada, entre 12 e 256 caracteres. Use uma senha longa e aleatória, preferencialmente gerada por gerenciador de senhas; compartilhe somente com a família.
+- `SITE_PASSWORD`: senha compartilhada, entre 8 e 256 caracteres. Use uma senha longa e aleatória, preferencialmente gerada por gerenciador de senhas; compartilhe somente com a família.
 - `SESSION_SECRET`: chave independente e aleatória com ao menos 32 caracteres. Não compartilhe com familiares; ela assina sessões.
 - Esses valores são **Secrets do Cloudflare Pages**, não variáveis de build, arquivos em `public/` nem configurações de frontend. Sem ambos, o servidor bloqueia todo o acervo com `503`.
 - O servidor verifica a senha usando HMAC/WebCrypto. A senha nunca é incluída no HTML, na URL, nos cookies ou nos logs da aplicação.
